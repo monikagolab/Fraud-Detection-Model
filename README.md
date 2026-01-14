@@ -10,7 +10,7 @@ E-commerce Fraud Detection Model
 
 **The Core Problem:** The goal is to build a classification model that leverages the relationship between user identity, device metadata, and transactional behavior to predict the likelihood of fraud (Is Fraudulent). Specifically, the model must distinguish between a legitimate high-value purchase and a fraudulent one by identifying anomalies in the IP-to-Location mapping and the Account Age-to-Amount ratio.
 
-Key Technical Challenges:
+**Key Technical Challenges:**
 
 Behavioral Profiling: Determining how features like Account Age Days and Transaction Hour correlate with fraudulent behavior (e.g., do newer accounts with high-value orders pose a higher risk?).
 
@@ -36,4 +36,5 @@ Features identified from the data set:
 
 OUR DEPENDENT (TARGET) VARIABLE: **Is Fraud**
 
-III. Conclusion and Evaluation
+
+
