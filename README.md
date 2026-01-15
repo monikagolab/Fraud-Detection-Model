@@ -39,6 +39,7 @@ OUR DEPENDENT (TARGET) VARIABLE: **Is Fraud**
                  ________________________________ALGORITHM SELECTION______________________________
 
 **Logistic Regression**
+
 Logistic Regression was chosen because it allows for direct observation of how features like Transaction Amount or Account Age contribute to the probability of fraud via their coefficients. Additionally, it maps features to a 0–1 range using the Sigmoid function, which is ideal for binary financial classification tasks.
 
 To address the class imbalance:
@@ -49,6 +50,7 @@ Strategic Thresholding: The model was evaluated based on its ability to maximize
 
 
 **Random Forest**
+
 Random Forest was chosen to capture complex, non-linear relationships within the transactional data that simpler models might miss. It is highly effective at identifying fraud patterns that rely on a combination of factors. 
 
 To address the class imbalance:
@@ -59,6 +61,7 @@ We utilized RandomizedSearchCV with Stratified K-Fold cross-validation to tune t
 
 
 **SVM**
+
 A Support Vector Machine was implemented to test if a higher-dimensional boundary could better isolate fraudulent transactions from legitimate ones. SVM is designed to be less sensitive to individual outliers that don't fall near the decision boundary, which is helpful in noisy e-commerce data. As stated in the lecture notes, SVMs are a staple in credit scoring and fraud detection due to their mathematical rigor and ability to handle high-dimensional feature sets
 
 To address the class imbalance:
@@ -70,7 +73,7 @@ Stratified K-Fold cross-validation was utilized to ensure that the 5% minority f
 
 RandomizedSearchCV was utilized for hyperparameter tuning to efficiently explore a wide range of parameter values without the exhaustive computational cost of a full grid search.
 
-**Overall Evaluation**
+**Overall Evaluation:**
 While the algorithms were effective at Recall (catching the majority of fraudulent transactions), they all produced a high volume of False Positives.The use of Stratified K-Fold and RandomizedSearchCV ensured that all models were evaluated fairly on the 5% minority class. However, the low precision suggests that the "Fraud" and "Non-Fraud" classes in this dataset are not easily separable by current feature signals. The combined evaluation indicates that while the technical pipeline (stratification, tuning, and scaling) was executed correctly, the inherent nature of the dataset poses a limit on precision.
 
 
