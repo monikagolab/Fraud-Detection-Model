@@ -1,9 +1,6 @@
 # Fraud-Detection-Model
 E-Commerce Fraud Detection Model
 
-# Machine-Learning-Project
-E-commerce Fraud Detection Model
-
 **I. Problem Statement** 
 
 **Context:** The E-commerce industry faces a continuous threat from sophisticated fraudulent actors. This is a synthetic dataset that provides a simulation of 1.47 million transactions, where approximately 5% are flagged as fraudulent. Unlike simple transactional logs, this data includes customer demographics (Age, Location), technical fingerprints (IP Address, Device Used), and account history (Account Age), providing a holistic view of each purchase.
