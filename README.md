@@ -47,12 +47,6 @@ Precision-Recall Trade-off: Area Under the Precision-Recall Curve (AUPRC) was pr
 
 Strategic Thresholding: The model was evaluated based on its ability to maximize Recall.
 
-EVALUATION
-According to the experimental results:
-
-The Results: The model successfully identified 180 fraudulent transactions (True Positives), but struggled with 1,026 False Positives.
-
-Financial Impact: In a real-world scenario, this high recall is beneficial for security, but the low precision highlights a significant "customer friction" cost where many legitimate users would be incorrectly flagged.
 
 **Random Forest**
 Random Forest was chosen to capture complex, non-linear relationships within the transactional data that simpler models might miss. It is highly effective at identifying fraud patterns that rely on a combination of factors. 
@@ -96,3 +90,5 @@ Class Imbalance: The 5% fraud rate limits the model's ability to learn distinct 
 
 Data Quality: Synthetic datasets (like the one used here) may lack the complex behavioral nuances found in real-world adversarial fraud, creating a "performance plateau".
 
+
+**In a real-world scenario, this high recall is beneficial for security, but the low precision highlights a significant "customer friction" cost where many legitimate users would be incorrectly flagged.**
