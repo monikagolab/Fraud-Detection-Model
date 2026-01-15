@@ -22,11 +22,7 @@ Success Metrics: The primary metric will be F1-Score (to balance the capture of 
 
 **II. Solution Approach**
 
-                ________________________________FEATURE ENGINEERING___________________________
-
 Features identified from the data set: 
-
--**Transaction Metadata**: Transaction ID, User ID, Timestamp
 
 -**Transaction Specifics**: Transaction Amount, Payment Method (PayPal, credit card, debit card, bank transfer), Product Category (electronics, toys & games, clothing, health & beauty, home & garden, etc.), Quantity, Account Age Days, Transaction Hour
 
@@ -36,7 +32,6 @@ Features identified from the data set:
 
 OUR DEPENDENT (TARGET) VARIABLE: **Is Fraud**
 
-                 ________________________________ALGORITHM SELECTION______________________________
 
 **Logistic Regression**
 
