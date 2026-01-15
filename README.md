@@ -36,5 +36,61 @@ Features identified from the data set:
 
 OUR DEPENDENT (TARGET) VARIABLE: **Is Fraud**
 
+                 ________________________________ALGORITHM SELECTION______________________________
 
+**Logistic Regression**
+Logistic Regression was chosen because it allows for direct observation of how features like Transaction Amount or Account Age contribute to the probability of fraud via their coefficients. Additionally, it maps features to a 0–1 range using the Sigmoid function, which is ideal for binary financial classification tasks.
+
+To address the class imbalance:
+To ensure the model didn't simply ignore the minority "Fraud" class, we focused on:
+Precision-Recall Trade-off: Area Under the Precision-Recall Curve (AUPRC) was prioritized over standard accuracy to better reflect the model's ability to identify rare fraud events.
+
+Strategic Thresholding: The model was evaluated based on its ability to maximize Recall.
+
+EVALUATION
+According to the experimental results:
+
+The Results: The model successfully identified 180 fraudulent transactions (True Positives), but struggled with 1,026 False Positives.
+
+Financial Impact: In a real-world scenario, this high recall is beneficial for security, but the low precision highlights a significant "customer friction" cost where many legitimate users would be incorrectly flagged.
+
+**Random Forest**
+Random Forest was chosen to capture complex, non-linear relationships within the transactional data that simpler models might miss. It is highly effective at identifying fraud patterns that rely on a combination of factors. 
+
+To address the class imbalance:
+Using Stratified K-Fold ensured that each cross-validation fold maintained the critical 5% fraud ratio.
+
+Hyerparameters:
+We utilized RandomizedSearchCV with Stratified K-Fold cross-validation to tune the number of trees in the forest & its maximum depth.
+
+
+**SVM**
+A Support Vector Machine was implemented to test if a higher-dimensional boundary could better isolate fraudulent transactions from legitimate ones. SVM is designed to be less sensitive to individual outliers that don't fall near the decision boundary, which is helpful in noisy e-commerce data. As stated in the lecture notes, SVMs are a staple in credit scoring and fraud detection due to their mathematical rigor and ability to handle high-dimensional feature sets
+
+To address the class imbalance:
+Cost-Sensitive Learning: In our implementation, we can adjust the C parameter (the penalty for misclassification). For this dataset, we assigned a higher cost to misclassifying the "Fraud" class to force the model to prioritize catching the 5% minority.
+Handling the "Overlap": SVM was chosen to see if it could find a more complex, non-linear boundary that reduces the number of "False Positives" seen in the baseline models.
+
+Hyperparameter tuning:
+Stratified K-Fold cross-validation was utilized to ensure that the 5% minority fraud class was represented proportionally in every training and validation fold. This prevented the model from training on subsets that lacked fraudulent examples and provided a more stable, reliable estimate of performance metrics like Average Precision when handling the inherent class imbalance of financial data.
+
+RandomizedSearchCV was utilized for hyperparameter tuning to efficiently explore a wide range of parameter values without the exhaustive computational cost of a full grid search.
+
+
+
+              ________________________________BUSINESS APPLICATION______________________________
+              
+**Criteria for Success when applied to a business**
+High Recall: Maximizing the detection of actual fraudulent transactions to minimize direct financial loss.
+
+Precision Stability: Maintaining a low "False Positive" rate to prevent blocking legitimate customers and causing "reputational" damage.
+
+AUC-PR Performance: Achieving a high Area Under the Precision-Recall Curve, which is a more reliable success metric than accuracy for rare-event financial data.
+
+**Constraints when applied to a business**
+Latency: The model must process transactions in milliseconds to support real-time e-commerce checkouts.
+
+Class Imbalance: The 5% fraud rate limits the model's ability to learn distinct patterns without heavy reliance on sampling techniques like SMOTE.
+
+Data Quality: Synthetic datasets (like the one used here) may lack the complex behavioral nuances found in real-world adversarial fraud, creating a "performance plateau".
 
