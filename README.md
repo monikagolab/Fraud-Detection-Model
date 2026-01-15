@@ -77,6 +77,7 @@ While the algorithms were effective at Recall (catching the majority of fraudule
               ________________________________BUSINESS APPLICATION______________________________
               
 **Criteria for Success when applied to a business**
+
 High Recall: Maximizing the detection of actual fraudulent transactions to minimize direct financial loss.
 
 Precision Stability: Maintaining a low "False Positive" rate to prevent blocking legitimate customers and causing "reputational" damage.
@@ -84,6 +85,7 @@ Precision Stability: Maintaining a low "False Positive" rate to prevent blocking
 AUC-PR Performance: Achieving a high Area Under the Precision-Recall Curve, which is a more reliable success metric than accuracy for rare-event financial data.
 
 **Constraints when applied to a business**
+
 Latency: The model must process transactions in milliseconds to support real-time e-commerce checkouts.
 
 Class Imbalance: The 5% fraud rate limits the model's ability to learn distinct patterns without heavy reliance on sampling techniques like SMOTE.
