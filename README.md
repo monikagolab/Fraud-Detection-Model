@@ -76,6 +76,8 @@ Stratified K-Fold cross-validation was utilized to ensure that the 5% minority f
 
 RandomizedSearchCV was utilized for hyperparameter tuning to efficiently explore a wide range of parameter values without the exhaustive computational cost of a full grid search.
 
+**Overall Evaluation**
+While the algorithms were effective at Recall (catching the majority of fraudulent transactions), they all produced a high volume of False Positives.The use of Stratified K-Fold and RandomizedSearchCV ensured that all models were evaluated fairly on the 5% minority class. However, the low precision suggests that the "Fraud" and "Non-Fraud" classes in this dataset are not easily separable by current feature signals. The combined evaluation indicates that while the technical pipeline (stratification, tuning, and scaling) was executed correctly, the inherent nature of the dataset poses a limit on precision.
 
 
               ________________________________BUSINESS APPLICATION______________________________
