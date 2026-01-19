@@ -1,7 +1,7 @@
 # Fraud-Detection-Model
 E-Commerce Fraud Detection Model
 
-*I. Problem Statement*
+**I. Problem Statement**
 
 E-commerce platforms process thousands of transactions every day, and a small but significant portion of these transactions are fraudulent. Fraudulent transactions lead to direct financial losses, increased chargebacks, and reduced customer trust.
 
