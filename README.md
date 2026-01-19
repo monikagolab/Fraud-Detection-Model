@@ -9,6 +9,13 @@ This is a synthethic dataset, only about 5% of transactions are fraudulent, maki
 
 Objective: Build a machine learning model that can accurately identify fraudulent e-commerce transactions using customer and transaction data, while handling class imbalance effectively and maximizing the detection of fraud cases.
 
-*II. Solution Approach*
+**II. Solution Approach**
 
-*III. Final Results and Evaluation*
+3 models: Logistic Regression, Random Forest, Linear SVM
+
+**III. Final Results and Evaluation**
+
+Evaluation is done using metrics that reflect real fraud detection needs. Because missing fraud is costly, the approach emphasizes Recall (how many frauds are caught) along with Precision (how many flagged transactions are truly fraud). The F1-score is used as a balanced summary of precision and recall. In addition, the confusion matrix is analyzed to understand the trade-off between false positives and false negatives. Since the dataset is imbalanced, the Average Precision (PR-AUC) is used as key metrics as it provides a more meaningful view of performance than ROC-AUC in rare-event detection.
+
+The models are not the best-performing solution, as implied by weak evaluation metrics. A PR-AUC below 0.4 suggests the models do not rank fraudulent transactions consistently higher than non-fraud ones. In evaluation, this translates to a poor trade-off: either many fraud cases are missed (low recall) or too many legitimate transactions are flagged (low precision). Hence, the current model is not optimal and would need improvements. However, since this was the first machine learning model, it served as a strong baseline and helped to understand the complete ML workflow, choose appropriate evaluation metrics, and identify key areas for future enhancement.
+
