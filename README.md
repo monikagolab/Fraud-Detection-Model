@@ -11,7 +11,19 @@ Objective: Build a machine learning model that can accurately identify fraudulen
 
 **II. Solution Approach**
 
-3 models: Logistic Regression, Random Forest, Linear SVM
+After exploring the data to understand fraud patterns, key features were engineered such as:
+- binary variable "Is Night": marking night transactions that happend between 12 and 5 AM
+- binary variable "New Account": created by flagging accounts that are 40 days old or less
+- binary variable "High Amount": marking transactions above the 99th percentile of transaction amounts, representing unusually large purchases
+These features, combined with interaction variables "Night_NewAccount" and "HighAmount_NewAccount", help the model better distinguish suspicious transactions from normal customer behavior.
+
+3 models — *Logistic Regression, Random Forest, and Linear SVM* — were trained and evaluated. A preprocessing pipeline was built to consistently encode categorical variables and scale numerical features (for Logistic Regression and Linear SVM).
+
+To address class imbalance, class_weight="balanced" was used for Logistic Regression and Linear SVM, while class_weight="balanced_subsample" was applied for Random Forest.
+
+Hyperparameter tuning for Random Forest and Linear SVM with Stratified 5-Fold CV was applied to optimize model performance. To improve training efficiency, RandomizedSearchCV was used instead of GridSearchCV for hyperparameter tuning, significantly reducing computation time.
+
+Additional threshold tunning was applied for Random Forest, to achieve a recall of 70%. 
 
 **III. Final Results and Evaluation**
 
