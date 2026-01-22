@@ -17,6 +17,8 @@ After exploring the data to understand fraud patterns, key features were enginee
 - binary variable "High Amount": marking transactions above the 99th percentile of transaction amounts, representing unusually large purchases
 These features, combined with interaction variables "Night_NewAccount" and "HighAmount_NewAccount", help the model better distinguish suspicious transactions from normal customer behavior.
 
+Feature selection was performed through an trial-and-error process, testing different combinations of variables and evaluating their impact on model performance. After multiple experiments, the final selected features produced the best results and were therefore kept in the final model. :) 
+
 3 models — *Logistic Regression, Random Forest, and Linear SVM* — were trained and evaluated. A preprocessing pipeline was built to consistently encode categorical variables and scale numerical features (for Logistic Regression and Linear SVM).
 
 To address class imbalance, class_weight="balanced" was used for Logistic Regression and Linear SVM, while class_weight="balanced_subsample" was applied for Random Forest.
