@@ -21,7 +21,7 @@ Feature selection was performed through an trial-and-error process, testing diff
 
 3 models — *Logistic Regression, Random Forest, and Linear SVM* — were trained and evaluated. A preprocessing pipeline was built to consistently encode categorical variables and scale numerical features (for Logistic Regression and Linear SVM).
 
-To address class imbalance, class_weight="balanced" was used for Logistic Regression and Linear SVM, while class_weight="balanced_subsample" was applied for Random Forest.
+To address class imbalance, class_weight="balanced" was used for Logistic Regression and Linear SVM, while class_weight="balanced_subsample" was applied for Random Forest during training.
 
 Hyperparameter tuning for Random Forest and Linear SVM with Stratified 5-Fold CV was applied to optimize model performance. To improve training efficiency, RandomizedSearchCV was used instead of GridSearchCV for hyperparameter tuning, significantly reducing computation time.
 
