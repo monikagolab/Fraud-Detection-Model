@@ -7,7 +7,7 @@ E-commerce platforms process thousands of transactions every day, and a small bu
 
 This is a synthethic dataset, only about 5% of transactions are fraudulent, making fraud detection a highly imbalanced, binary classification problem. Traditional accuracy-based models may fail because they tend to favor the majority (non-fraud) class and miss fraudulent activities.
 
-Objective: Build a machine learning model that can accurately identify fraudulent e-commerce transactions using customer and transaction data, while handling class imbalance effectively and maximizing the detection of fraud cases.
+Objective: Build a machine learning model that can accurately identify fraudulent e-commerce transactions using customer and transaction data, while handling class imbalance and maximizing the detection of fraud cases.
 
 **II. Solution Approach**
 
